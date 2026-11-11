@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday Bubu ❤️ | From Harry</title>
+  <meta name="description" content="A cinematic birthday wish for Bubu" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose: { 50:'#fff1f2',100:'#ffe4e6',200:'#fecdd3',300:'#fda4af',400:'#fb7185',500:'#f43f5e',600:'#e11d48' }
+          },
+          fontFamily: {
+            script: ['Great Vibes', 'cursive'],
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; overflow-x: hidden; }
+    body {
+      background: linear-gradient(160deg, #1a0a12 0%, #2d1520 40%, #1a0a12 100%);
+      font-family: 'Inter', sans-serif;
+      color: #ffe4e6;
+    }
+    .particle {
+      position: fixed; pointer-events: none; z-index: 5; opacity: 0.6;
+      animation: floatUp 8s linear forwards;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
+      15% { opacity: 0.7; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+    #gate { transition: opacity 0.9s ease, visibility 0.9s; }
+    #gate.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .section {
+      min-height: 100dvh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; padding: 2rem 1.2rem; position: relative;
+    }
+    .soft-card {
+      background: rgba(255, 240, 245, 0.07);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(251, 113, 133, 0.18);
+      box-shadow: 0 25px 60px -20px rgba(0,0,0,0.5);
+    }
+    .cake-stage { position: relative; width: 280px; height: 320px; margin: 0 auto; }
+    .plate {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      width: 240px; height: 28px;
+      background: radial-gradient(ellipse at center, #e8d5a3 0%, #c9a86c 70%, #a88b4a 100%);
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.3);
+    }
+    .plate::after {
+      content: ''; position: absolute; top: 4px; left: 12px; right: 12px; height: 10px;
+      background: rgba(255,250,230,0.25); border-radius: 50%;
+    }
+    .tier {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      border-radius: 6px 6px 4px 4px;
+      box-shadow: inset -12px 0 20px rgba(0,0,0,0.12), inset 8px 0 15px rgba(255,255,255,0.15);
+    }
+    .tier-bottom {
+      bottom: 36px; width: 200px; height: 90px;
+      background: linear-gradient(90deg, #f5e6d3 0%, #fff8f0 30%, #f0e0cc 70%, #e8d4b8 100%);
+    }
+    .tier-top {
+      bottom: 120px; width: 140px; height: 70px;
+      background: linear-gradient(90deg, #f8ebe0 0%, #fffaf5 35%, #f2e2d4 70%, #ead6c4 100%);
+    }
+    .scallop {
+      position: absolute; width: 22px; height: 16px; background: #fff8f0;
+      border-radius: 50%; box-shadow: 0 2px 0 #f0dcc8;
+    }
+    .scallop-bottom { bottom: 118px; }
+    .scallop-top { bottom: 182px; }
+    .ribbon {
+      position: absolute; bottom: 70px; left: 50%; transform: translateX(-50%);
+      width: 204px; height: 16px;
+      background: linear-gradient(90deg, #9f1239, #be123c, #9f1239);
+      border-radius: 2px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+    .ribbon-dot {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 5px; height: 5px; background: #fbbf24; border-radius: 50%;
+    }
+    .candle {
+      position: absolute; width: 9px; height: 32px;
+      background: repeating-linear-gradient(to bottom, #fef3c7 0px, #fef3c7 5px, #1e3a5f 5px, #1e3a5f 10px);
+      border-radius: 2px; box-shadow: 1px 0 2px rgba(0,0,0,0.2); z-index: 10;
+    }
+    .candle.gold-stripe {
+      background: repeating-linear-gradient(to bottom, #fef3c7 0px, #fef3c7 5px, #d4a017 5px, #d4a017 10px);
+    }
+    .flame {
+      position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+      width: 14px; height: 22px; opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+    }
+    .flame.lit { opacity: 1; }
+    .flame-outer {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 14px; height: 20px;
+      background: radial-gradient(ellipse at bottom, #fbbf24 0%, #f59e0b 40%, transparent 70%);
+      border-radius: 50% 50% 20% 20%; animation: flicker 0.12s infinite alternate; filter: blur(0.5px);
+    }
+    .flame-inner {
+      position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+      width: 7px; height: 12px;
+      background: radial-gradient(ellipse at bottom, #fffbeb 0%, #fde68a 60%, transparent 100%);
+      border-radius: 50% 50% 30% 30%; animation: flicker 0.1s infinite alternate-reverse;
+    }
+    .flame-glow {
+      position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+      width: 30px; height: 30px;
+      background: radial-gradient(circle, rgba(251,191,36,0.45) 0%, transparent 70%);
+      border-radius: 50%; animation: glowPulse 0.8s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scaleY(1) scaleX(1); }
+      100% { transform: translateX(-50%) scaleY(0.92) scaleX(1.05) translateY(1px); }
+    }
+    @keyframes glowPulse {
+      0% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.15); }
+    }
+    .smoke-puff {
+      position: absolute; bottom: 100%; left: 50%; width: 8px; height: 8px;
+      background: rgba(180,180,200,0.5); border-radius: 50%; pointer-events: none;
+      animation: smokeRise 1.4s ease-out forwards;
+    }
+    @keyframes smokeRise {
+      0% { transform: translate(-50%, 0) scale(0.6); opacity: 0.6; }
+      100% { transform: translate(-50%, -50px) scale(2.2); opacity: 0; }
+    }
+    .wish-bar-bg {
+      width: 220px; height: 5px; background: rgba(255,255,255,0.12);
+      border-radius: 99px; overflow: hidden; margin: 12px auto 0;
+    }
+    .wish-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #fbbf24, #f43f5e);
+      border-radius: 99px; transition: width 0.05s linear;
+      box-shadow: 0 0 12px rgba(251,191,36,0.5);
+    }
+    #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 90; }
+    .photo-frame {
+      width: 220px; height: 280px; border-radius: 16px; overflow: hidden;
+      border: 3px solid rgba(251,113,133,0.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      background: linear-gradient(145deg, #3a1a28, #2a1220); position: relative;
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; color: #fda4af;
+      font-size: 14px; text-align: center; padding: 20px; gap: 8px;
+    }
+    .letter-page { display: none; }
+    .letter-page.active { display: block; animation: fadeUp 0.45s ease; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .snap-y { scroll-snap-type: y mandatory; overflow-y: auto; height: 100dvh; }
+    .snap-start { scroll-snap-align: start; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .pulse-btn { animation: softPulse 2.2s infinite; }
+    @keyframes softPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(244,63,94,0.45); }
+      50% { box-shadow: 0 0 0 16px rgba(244,63,94,0); }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti"></canvas>
+  <div id="particles"></div>
+
+  <!-- GATE -->
+  <div id="gate" class="fixed inset-0 z-50 flex flex-col items-center justify-center px-6 text-center"
+       style="background: radial-gradient(ellipse at center, #3a1525 0%, #1a0a12 70%);">
+    <div class="absolute top-10 left-0 right-0 text-center text-rose-300/50 text-xs tracking-[0.35em] uppercase">
+      13 · December · 2026
+    </div>
+    <div class="mb-10">
+      <div class="text-5xl mb-5">🎂</div>
+      <h1 class="font-script text-5xl sm:text-6xl text-rose-300 mb-3 leading-tight">It's your day..</h1>
+      <p class="font-serif text-xl text-rose-200/70 italic">And I made something special for you.. ♡</p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <button onclick="openSurprise()" class="pulse-btn px-10 py-4 rounded-full bg-rose-500 text-white font-medium text-lg shadow-lg shadow-rose-900/50 hover:bg-rose-400 transition active:scale-95">
+        YES PLEASE ❤️
+      </button>
+      <button onclick="teaseNo(this)" class="px-8 py-4 rounded-full bg-white/5 text-rose-300/70 border border-rose-400/20 font-medium hover:bg-white/10 transition">
+        No thank you 🥺
+      </button>
+    </div>
+    <p class="mt-12 text-rose-400/40 text-sm">From Harry, with all my heart</p>
+  </div>
+
+  <!-- MAIN -->
+  <div id="main" class="hidden snap-y no-scrollbar">
+
+    <section class="section snap-start">
+      <div class="text-center max-w-md">
+        <p class="text-rose-400/60 tracking-[0.3em] text-xs uppercase mb-4">A little surprise</p>
+        <h2 class="font-script text-5xl sm:text-6xl text-rose-300 mb-3">Happy Birthday</h2>
+        <h1 class="font-serif text-4xl sm:text-5xl font-semibold text-rose-100 mb-6">Bubu 💕</h1>
+        <p class="text-rose-200/60 text-lg leading-relaxed">
+          Today the world is a little softer<br>because you were born.
+        </p>
+      </div>
+      <div class="absolute bottom-8 text-rose-400/40 text-sm animate-bounce">scroll ↓</div>
+    </section>
+
+    <section class="section snap-start">
+      <div class="text-center mb-6">
+        <h3 class="font-serif text-2xl text-rose-200 mb-1">You</h3>
+        <p class="text-rose-400/50 text-sm">My favourite moments</p>
+      </div>
+
+      <!-- Hero photo -->
+      <div class="photo-frame mb-4" style="width:200px;height:250px;">
+        <img src="photo1.jpg" alt="Bubu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
+        <div class="photo-placeholder" style="display:none;">
+          <div class="text-2xl">📷</div>
+          <div class="text-xs">photo1.jpg</div>
+        </div>
+      </div>
+
+      <!-- 3 more photos grid -->
+      <div class="grid grid-cols-3 gap-2 max-w-xs w-full">
+        <div class="rounded-xl overflow-hidden" style="aspect-ratio:1;background:rgba(251,113,133,0.1);">
+          <img src="photo2.jpg" alt="" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="rounded-xl overflow-hidden" style="aspect-ratio:1;background:rgba(251,113,133,0.1);">
+          <img src="photo3.jpg" alt="" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="rounded-xl overflow-hidden" style="aspect-ratio:1;background:rgba(251,113,133,0.1);">
+          <img src="photo4.jpg" alt="" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <p class="text-rose-400/30 text-xs mt-3">photo1.jpg · photo2.jpg · photo3.jpg · photo4.jpg</p>
+    </section>
+
+    <section class="section snap-start">
+      <div class="soft-card rounded-3xl p-8 max-w-sm w-full text-center">
+        <p class="text-rose-400/60 text-xs tracking-widest uppercase mb-2">Counting every second</p>
+        <h3 class="font-serif text-xl text-rose-200 mb-7">Until your day</h3>
+        <div class="grid grid-cols-4 gap-2.5 mb-6">
+          <div class="bg-rose-500/10 rounded-2xl py-3.5">
+            <div id="days" class="text-2xl font-semibold text-rose-300">00</div>
+            <div class="text-[10px] text-rose-400/50 mt-0.5">Days</div>
+          </div>
+          <div class="bg-rose-500/10 rounded-2xl py-3.5">
+            <div id="hours" class="text-2xl font-semibold text-rose-300">00</div>
+            <div class="text-[10px] text-rose-400/50 mt-0.5">Hours</div>
+          </div>
+          <div class="bg-rose-500/10 rounded-2xl py-3.5">
+            <div id="mins" class="text-2xl font-semibold text-rose-300">00</div>
+            <div class="text-[10px] text-rose-400/50 mt-0.5">Mins</div>
+          </div>
+          <div class="bg-rose-500/10 rounded-2xl py-3.5">
+            <div id="secs" class="text-2xl font-semibold text-rose-300">00</div>
+            <div class="text-[10px] text-rose-400/50 mt-0.5">Secs</div>
+          </div>
+        </div>
+        <p class="font-serif italic text-rose-300/50 text-sm">13 December 2026</p>
+      </div>
+    </section>
+
+    <section class="section snap-start">
+      <div class="soft-card rounded-3xl p-7 max-w-md w-full">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="font-serif text-xl text-rose-200">A letter for you</h3>
+          <span id="pageIndicator" class="text-rose-400/50 text-sm">1 / 3</span>
+        </div>
+        <div class="min-h-[200px]">
+          <div class="letter-page active" data-page="1">
+            <p class="font-serif text-[17px] leading-relaxed text-rose-100/85">
+              My dearest Bubu,<br><br>
+              Every time I look at you, the world feels a little softer. 
+              You are the calm in my chaos and the reason ordinary days feel special.
+            </p>
+          </div>
+          <div class="letter-page" data-page="2">
+            <p class="font-serif text-[17px] leading-relaxed text-rose-100/85">
+              I love the way you laugh at the smallest things, 
+              how your eyes light up, and how safe I feel just knowing you’re there.<br><br>
+              Thank you for being my favourite person.
+            </p>
+          </div>
+          <div class="letter-page" data-page="3">
+            <p class="font-serif text-[17px] leading-relaxed text-rose-100/85">
+              On your birthday I just want you to know — 
+              you are deeply loved, completely adored, and forever mine.<br><br>
+              Happy Birthday, my Bubu. ❤️<br><br>
+              <span class="font-script text-2xl text-rose-300">— Harry</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between mt-7">
+          <button onclick="prevLetter()" class="px-5 py-2.5 rounded-full border border-rose-400/20 text-rose-300/70 text-sm hover:bg-rose-500/10 transition">← Prev</button>
+          <button onclick="nextLetter()" class="px-5 py-2.5 rounded-full bg-rose-500 text-white text-sm hover:bg-rose-400 transition">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAKE SECTION -->
+    <section class="section snap-start" id="cakeSection">
+      <div class="text-center w-full max-w-sm">
+        <h3 class="font-serif text-2xl text-rose-200 mb-1">Make a Wish</h3>
+        <p id="cakeInstruction" class="text-rose-400/60 text-sm mb-6">Tap to light the candles</p>
+
+        <div class="cake-stage" id="cakeStage">
+          <div class="plate"></div>
+          <div class="tier tier-bottom"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% - 95px)"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% - 72px)"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% - 49px)"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% - 26px)"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% - 3px)"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% + 20px)"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% + 43px)"></div>
+          <div class="scallop scallop-bottom" style="left:calc(50% + 66px)"></div>
+          <div class="ribbon">
+            <div class="ribbon-dot" style="left:12px"></div>
+            <div class="ribbon-dot" style="left:32px"></div>
+            <div class="ribbon-dot" style="left:52px"></div>
+            <div class="ribbon-dot" style="left:72px"></div>
+            <div class="ribbon-dot" style="left:92px"></div>
+            <div class="ribbon-dot" style="left:112px"></div>
+            <div class="ribbon-dot" style="left:132px"></div>
+            <div class="ribbon-dot" style="left:152px"></div>
+            <div class="ribbon-dot" style="left:172px"></div>
+            <div class="ribbon-dot" style="left:192px"></div>
+          </div>
+          <div class="tier tier-top"></div>
+          <div class="scallop scallop-top" style="left:calc(50% - 65px)"></div>
+          <div class="scallop scallop-top" style="left:calc(50% - 42px)"></div>
+          <div class="scallop scallop-top" style="left:calc(50% - 19px)"></div>
+          <div class="scallop scallop-top" style="left:calc(50% + 4px)"></div>
+          <div class="scallop scallop-top" style="left:calc(50% + 27px)"></div>
+          <div class="scallop scallop-top" style="left:calc(50% + 50px)"></div>
+
+          <!-- 8 Candles -->
+          <div class="candle gold-stripe" style="left:calc(50% - 42px); bottom:188px;" data-idx="0">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+          <div class="candle" style="left:calc(50% - 4.5px); bottom:188px;" data-idx="1">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+          <div class="candle gold-stripe" style="left:calc(50% + 33px); bottom:188px;" data-idx="2">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+          <div class="candle" style="left:calc(50% - 78px); bottom:122px;" data-idx="3">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+          <div class="candle gold-stripe" style="left:calc(50% - 42px); bottom:122px;" data-idx="4">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+          <div class="candle" style="left:calc(50% - 4.5px); bottom:122px;" data-idx="5">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+          <div class="candle gold-stripe" style="left:calc(50% + 33px); bottom:122px;" data-idx="6">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+          <div class="candle" style="left:calc(50% + 69px); bottom:122px;" data-idx="7">
+            <div class="flame"><div class="flame-glow"></div><div class="flame-outer"></div><div class="flame-inner"></div></div>
+          </div>
+        </div>
+
+        <div id="wishUI" class="mt-6 hidden">
+          <p class="text-rose-200/80 text-sm mb-2">Press & hold to make your wish</p>
+          <div class="wish-bar-bg"><div class="wish-bar" id="wishBar"></div></div>
+          <p class="text-rose-400/40 text-xs mt-2" id="wishPercent">0%</p>
+        </div>
+
+        <p id="cakeMsg" class="mt-5 text-rose-300/70 font-serif italic text-base h-6"></p>
+
+        <div class="mt-6 flex flex-col gap-3 items-center">
+          <button id="lightBtn" onclick="startLighting()" class="px-8 py-3 rounded-full bg-rose-500 text-white text-sm shadow-lg shadow-rose-900/40 hover:bg-rose-400 transition">
+            🔥 Light the Candles
+          </button>
+          <button id="holdBtn" class="hidden px-8 py-3 rounded-full bg-amber-500/90 text-white text-sm shadow-lg select-none"
+                  onmousedown="startHold(event)" onmouseup="endHold()" onmouseleave="endHold()"
+                  ontouchstart="startHold(event)" ontouchend="endHold()">
+            ✨ Hold to Wish
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section snap-start">
+      <div class="soft-card rounded-3xl p-8 max-w-sm w-full text-center">
+        <div class="text-4xl mb-3">🎵</div>
+        <h3 class="font-serif text-xl text-rose-200 mb-1">Our Song</h3>
+        <p class="text-rose-400/50 text-sm mb-6">Play this while you stay</p>
+        <audio id="bgMusic" loop>
+          <source src="song.mp3" type="audio/mpeg">
+        </audio>
+        <div class="bg-rose-500/10 rounded-2xl p-5">
+          <p class="font-medium text-rose-200 mb-1">A soft song for you</p>
+          <p class="text-xs text-rose-400/40 mb-4">song.mp3</p>
+          <button onclick="toggleMusic()" id="musicBtn" class="px-7 py-2.5 rounded-full bg-rose-500 text-white text-sm hover:bg-rose-400 transition">
+            ▶ Play
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section snap-start">
+      <div class="text-center max-w-sm">
+        <div class="text-5xl mb-5">💌</div>
+        <h2 class="font-script text-5xl text-rose-300 mb-3">I love you</h2>
+        <p class="font-serif text-lg text-rose-200/80 leading-relaxed mb-7">
+          More than words can ever say.<br>Happy Birthday, my Bubu.
+        </p>
+        <div class="soft-card rounded-2xl p-5 mb-8">
+          <p class="text-rose-200/70 leading-relaxed text-sm">
+            May this year bring you soft days, big dreams, and so much love.
+          </p>
+        </div>
+        <p class="font-script text-3xl text-rose-300 mb-1">Forever yours,</p>
+        <p class="font-serif text-xl text-rose-100 font-semibold">Harry ❤️</p>
+        <button onclick="launchConfetti()" class="mt-10 px-8 py-3.5 rounded-full bg-rose-500 text-white shadow-lg shadow-rose-900/40 hover:bg-rose-400 transition">
+          🎉 Celebrate again
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const BIRTHDAY = new Date('2026-12-13T00:00:00').getTime();
+    let letterPage = 1;
+    const totalPages = 3;
+    let candlesLit = 0;
+    let wishProgress = 0;
+    let holding = false;
+    let wishDone = false;
+    let musicPlaying = false;
+    const TOTAL_CANDLES = 8;
+
+    function openSurprise() {
+      document.getElementById('gate').classList.add('hidden');
+      document.getElementById('main').classList.remove('hidden');
+      startParticles();
+      startCountdown();
+      setTimeout(launchConfetti, 500);
+    }
+
+    function teaseNo(btn) {
+      btn.innerText = 'Are you sure? 🥺';
+      setTimeout(() => {
+        btn.innerText = 'Okay fine... YES ❤️';
+        btn.onclick = openSurprise;
+      }, 700);
+    }
+
+    function startCountdown() {
+      function update() {
+        const now = Date.now();
+        const d = BIRTHDAY - now;
+        if (d < 0) {
+          ['days','hours','mins','secs'].forEach(id => document.getElementById(id).innerText = '00');
+          return;
+        }
+        document.getElementById('days').innerText  = String(Math.floor(d / 86400000)).padStart(2,'0');
+        document.getElementById('hours').innerText = String(Math.floor((d % 86400000) / 3600000)).padStart(2,'0');
+        document.getElementById('mins').innerText  = String(Math.floor((d % 3600000) / 60000)).padStart(2,'0');
+        document.getElementById('secs').innerText  = String(Math.floor((d % 60000) / 1000)).padStart(2,'0');
+      }
+      update();
+      setInterval(update, 1000);
+    }
+
+    function showLetterPage(n) {
+      document.querySelectorAll('.letter-page').forEach(p => p.classList.remove('active'));
+      document.querySelector(`.letter-page[data-page="${n}"]`).classList.add('active');
+      document.getElementById('pageIndicator').innerText = n + ' / ' + totalPages;
+    }
+    function nextLetter() { if (letterPage < totalPages) { letterPage++; showLetterPage(letterPage); } }
+    function prevLetter() { if (letterPage > 1) { letterPage--; showLetterPage(letterPage); } }
+
+    function startLighting() {
+      document.getElementById('lightBtn').classList.add('hidden');
+      document.getElementById('cakeInstruction').innerText = 'Lighting the candles...';
+      lightNextCandle();
+    }
+
+    function lightNextCandle() {
+      if (candlesLit >= TOTAL_CANDLES) {
+        document.getElementById('cakeInstruction').innerText = 'All candles are lit';
+        document.getElementById('wishUI').classList.remove('hidden');
+        document.getElementById('holdBtn').classList.remove('hidden');
+        document.getElementById('cakeMsg').innerText = 'Close your eyes and make a wish...';
+        return;
+      }
+      const candle = document.querySelector('.candle[data-idx="' + candlesLit + '"]');
+      if (candle) {
+        candle.querySelector('.flame').classList.add('lit');
+        candlesLit++;
+        setTimeout(lightNextCandle, 320);
+      }
+    }
+
+    function startHold(e) {
+      if (wishDone) return;
+      if (e) e.preventDefault();
+      holding = true;
+      requestAnimationFrame(holdLoop);
+    }
+    function endHold() { holding = false; }
+
+    function holdLoop() {
+      if (!holding || wishDone) return;
+      wishProgress = Math.min(1, wishProgress + 0.012);
+      document.getElementById('wishBar').style.width = (wishProgress * 100) + '%';
+      document.getElementById('wishPercent').innerText = Math.floor(wishProgress * 100) + '%';
+      document.querySelectorAll('.flame.lit .flame-outer').forEach(f => {
+        f.style.height = (20 + wishProgress * 10) + 'px';
+      });
+      if (wishProgress >= 1) { blowOut(); return; }
+      requestAnimationFrame(holdLoop);
+    }
+
+    function blowOut() {
+      wishDone = true;
+      holding = false;
+      document.getElementById('holdBtn').classList.add('hidden');
+      document.getElementById('wishUI').classList.add('hidden');
+      document.getElementById('cakeInstruction').innerText = '';
+      document.getElementById('cakeMsg').innerText = 'Wish granted ✨ Happy Birthday Bubu!';
+
+      document.querySelectorAll('.candle').forEach((c, i) => {
+        setTimeout(() => {
+          c.querySelector('.flame').classList.remove('lit');
+          for (let s = 0; s < 3; s++) {
+            const puff = document.createElement('div');
+            puff.className = 'smoke-puff';
+            puff.style.left = '50%';
+            puff.style.animationDelay = (s * 0.12) + 's';
+            puff.style.width = (6 + Math.random() * 6) + 'px';
+            puff.style.height = puff.style.width;
+            c.appendChild(puff);
+            setTimeout(() => puff.remove(), 1500);
+          }
+        }, i * 80);
+      });
+      setTimeout(launchConfetti, 400);
+      setTimeout(launchConfetti, 900);
+    }
+
+    function toggleMusic() {
+      const audio = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicBtn');
+      if (!audio.querySelector('source') && !audio.src) {
+        musicPlaying = !musicPlaying;
+        btn.innerText = musicPlaying ? '⏸ Pause' : '▶ Play';
+        return;
+      }
+      if (musicPlaying) { audio.pause(); btn.innerText = '▶ Play'; }
+      else { audio.play().catch(()=>{}); btn.innerText = '⏸ Pause'; }
+      musicPlaying = !musicPlaying;
+    }
+
+    function startParticles() {
+      setInterval(() => {
+        const el = document.createElement('div');
+        el.className = 'particle';
+        el.innerText = ['❤️','💕','💗','✨','🌸'][Math.floor(Math.random()*5)];
+        el.style.left = Math.random()*100 + 'vw';
+        el.style.fontSize = (12 + Math.random()*14) + 'px';
+        el.style.animationDuration = (6 + Math.random()*4) + 's';
+        document.getElementById('particles').appendChild(el);
+        setTimeout(() => el.remove(), 10000);
+      }, 600);
+    }
+
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const pieces = [];
+      const colors = ['#f43f5e','#fb7185','#fda4af','#fbbf24','#c084fc','#fff','#fce7f3'];
+      for (let i = 0; i < 140; i++) {
+        pieces.push({
+          x: Math.random() * canvas.width, y: Math.random() * canvas.height - canvas.height,
+          w: 5 + Math.random()*9, h: 7 + Math.random()*10,
+          color: colors[Math.floor(Math.random()*colors.length)],
+          vx: -2.5 + Math.random()*5, vy: 2 + Math.random()*5,
+          rot: Math.random()*360, rotSpeed: -5 + Math.random()*10
+        });
+      }
+      let frame = 0;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach(p => {
+          p.x += p.vx; p.y += p.vy; p.rot += p.rotSpeed;
+          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot * Math.PI / 180);
+          ctx.fillStyle = p.color; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h); ctx.restore();
+        });
+        frame++;
+        if (frame < 200) requestAnimationFrame(draw);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      draw();
+    }
+
+    window.addEventListener('resize', () => {
+      const c = document.getElementById('confetti');
+      c.width = window.innerWidth; c.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
